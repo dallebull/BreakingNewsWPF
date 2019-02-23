@@ -4,9 +4,50 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BreakingNewsWPF"
+        xmlns:bll="clr-namespace:BreakingNewsWPF.BLL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Breaking News" Height="259.137" Width="652.792"   ResizeMode="NoResize">
+
+    <Window.Resources>
+        <bll:EnumMatchToBooleanConverter x:Key="enumConverter" />
+
+    </Window.Resources>
+
+    <Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="242*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="336*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Content="GIEF STATS" HorizontalAlignment="Left" Height="25" Margin="17,146,0,0" VerticalAlignment="Top" Width="309" Click="Button_Click" Grid.Column="4"/>
+
+        <GroupBox Header="Select Keyword" HorizontalAlignment="Left" Height="206" Margin="10,10,0,0" VerticalAlignment="Top" Width="305" Grid.ColumnSpan="5" FontSize="15" BorderThickness="2" >
+
+        </GroupBox>
+        <RadioButton Content="Venezuela" HorizontalAlignment="Left" Margin="22,37,0,0" VerticalAlignment="Top" GroupName="keywordGroup" Grid.ColumnSpan="3" FontSize="15"  
+                         Checked="KeywordRadio_Checked" Height="19" Width="86" />
+        <RadioButton Content="Bostad" HorizontalAlignment="Left" Margin="22,57,0,0" VerticalAlignment="Top" GroupName="keywordGroup" Grid.ColumnSpan="3" FontSize="15" 
+                     Checked="KeywordRadio_Checked"  Height="19" Width="64"/>
+        <RadioButton Content="Ekonomi" HorizontalAlignment="Left" Margin="22,77,0,0" VerticalAlignment="Top" GroupName="keywordGroup" Grid.ColumnSpan="3" FontSize="15" 
+                     Checked="KeywordRadio_Checked"  Height="19" Width="77"/>
+        <RadioButton Content="Polis" HorizontalAlignment="Left" Margin="22,97,0,0" VerticalAlignment="Top" GroupName="keywordGroup" Grid.ColumnSpan="3" FontSize="15" 
+                     Checked="KeywordRadio_Checked"  Height="19" Width="49"/>
+        <RadioButton Content="Trump" HorizontalAlignment="Left" Margin="22,116,0,0" VerticalAlignment="Top" GroupName="keywordGroup" Grid.ColumnSpan="3" FontSize="15" 
+                     Checked="KeywordRadio_Checked"  Height="19" Width="86"/>
+
+
+        <GroupBox Header="Select Site" HorizontalAlignment="Left" Height="131" Margin="17,10,0,0" VerticalAlignment="Top" Width="309" Grid.Column="4" FontSize="15"/>
+        <RadioButton Content="Aftonbladet" HorizontalAlignment="Left" Margin="30,37,0,0" VerticalAlignment="Top" GroupName="siteGroup" Grid.Column="4" FontSize="15" Height="19" Width="106" 
+                     Checked="SiteRadio_Checked"/>
+        <RadioButton Content="Expressen" HorizontalAlignment="Left" Margin="30,57,0,0" VerticalAlignment="Top" GroupName="siteGroup" Grid.Column="4" FontSize="15" Height="19" Width="84" 
+                     Checked="SiteRadio_Checked"/>
+        <RadioButton Content="Dagens Nyheter" HorizontalAlignment="Left" Margin="30,77,0,0" VerticalAlignment="Top" GroupName="siteGroup" Grid.Column="4" FontSize="15" Height="19" Width="126" 
+                     Checked="SiteRadio_Checked"/>
+        <TextBlock HorizontalAlignment="Left" Margin="60,178,0,0" TextWrapping="Wrap" Text="Result:" VerticalAlignment="Top" Height="26" Width="55" FontSize="15" Grid.Column="4"/>
+        <TextBox Name ="resultBox" HorizontalAlignment="Left" Height="28" Margin="115,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" FontSize="15" Grid.Column="4"/>
+
     </Grid>
 </Window>
